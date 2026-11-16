@@ -48,6 +48,36 @@
     <div class="projects">
       <article class="project">
         <div>
+          <h3>brik8s</h3>
+          <p class="case__label">Why I built it</p>
+          <p>I kept repeating the same hardening checklist every time a cluster had to go onto small or disconnected hardware, so I put the checklist into the distribution.</p>
+          <p class="case__label">What it does</p>
+          <p>A single-binary Kubernetes distribution with containerd and etcd built in. It starts with encryption at rest, audit logging and a CIS Level 1 profile on by default, supports FIPS mode and SELinux, and rotates its own certificates.</p>
+          <ul class="tags"><li>Go</li><li>containerd</li><li>etcd</li><li>Cilium</li></ul>
+          <p class="project__status">Private repository · walkthrough on request</p>
+        </div>
+        <figure class="shot">
+          <img src="img/brik8s-cluster.png" alt="Terminal output from a fresh brik8s node: all health checks passing, the node Ready on Kubernetes v1.32.5, and the system pods running." width="2200" height="1220" loading="lazy">
+          <figcaption>fresh single-node install on Ubuntu 24.04, actual output</figcaption>
+        </figure>
+      </article>
+      <article class="project">
+        <div>
+          <h3>mozza</h3>
+          <p class="case__label">Why I built it</p>
+          <p>Writing a Deployment, Service, Ingress and StatefulSet by hand for every small app is slow and easy to get wrong, so I wanted a short recipe I could hand to anyone.</p>
+          <p class="case__label">What it does</p>
+          <p>A deployment compiler: a plain-English recipe compiles offline into Kubernetes manifests, with health checks, replicas and dependencies filled in. It also imports Docker Compose files and has deploy, logs and rollback commands.</p>
+          <ul class="tags"><li>Go</li><li>Kubernetes</li></ul>
+          <p class="project__status">Repository publishing soon</p>
+        </div>
+        <figure class="shot">
+          <img src="img/mozza-compile.png" alt="A mozza recipe for a frontend, API, Postgres and Redis next to the compile output that writes nine Kubernetes manifests." width="2200" height="1200" loading="lazy">
+          <figcaption>mozza validate and compile, actual output</figcaption>
+        </figure>
+      </article>
+      <article class="project">
+        <div>
           <h3>keep</h3>
           <p class="case__label">Why I built it</p>
           <p>My team runs several AI coding agents in the same repositories, and each one kept its own to-do list. Two agents would pick up the same task, or start on something that was still blocked.</p>
@@ -78,47 +108,17 @@
       </article>
       <article class="project">
         <div>
-          <h3>The Tavern</h3>
+          <h3>recall</h3>
           <p class="case__label">Why I built it</p>
-          <p>I wanted agents I could leave running unattended without worrying that they would push unreviewed code or call work done that they never checked.</p>
+          <p>Every new agent session started knowing nothing about our codebase, and the same mistakes got made twice. I extended an open-source memory server so the whole team's agents share what they learn.</p>
           <p class="case__label">What it does</p>
-          <p>Fifteen Claude Code plugins for writing specs, building in parallel and reviewing UX, each with guardrails. The git guard lets a run commit locally but blocks every way of publishing, even with permissions bypassed, and a separate agent checks the work.</p>
-          <ul class="tags"><li>Python</li><li>Claude Code plugins</li></ul>
+          <p>A self-hosted memory server that a team's coding agents read and write through MCP or plain HTTP: conventions, decisions, requirements and known errors, each scored for how fresh and trusted it is.</p>
+          <ul class="tags"><li>Python</li><li>PostgreSQL</li><li>MCP</li></ul>
           <p class="project__status">Repository publishing soon</p>
         </div>
         <figure class="shot">
-          <img src="img/tavern-tests.png" alt="Terminal output: the git guard allowing commits and denying pushes, and all ten plugin test suites passing, 539 tests." width="1516" height="1036" loading="lazy">
-          <figcaption>git guard decisions and the test suites, actual output</figcaption>
-        </figure>
-      </article>
-      <article class="project">
-        <div>
-          <h3>redpen</h3>
-          <p class="case__label">Why I built it</p>
-          <p>AI-generated pages, code and docs share the same tells, and I wanted a way to catch them in review instead of by eye.</p>
-          <p class="case__label">What it does</p>
-          <p>A linter that scans a project's source and its rendered page for the patterns that make UI, code and docs read as machine-made, and scores the result on two separate axes: slop and quality.</p>
-          <ul class="tags"><li>TypeScript</li><li>Playwright</li></ul>
-          <p class="project__status">Repository publishing soon</p>
-        </div>
-        <figure class="shot">
-          <img src="img/redpen-demo.gif" alt="redpen scanning a page and reporting a slop score and a quality score with its findings." width="1200" height="675" loading="lazy">
-          <figcaption>redpen scan, sample page</figcaption>
-        </figure>
-      </article>
-      <article class="project">
-        <div>
-          <h3>gumroad-mcp</h3>
-          <p class="case__label">Why I built it</p>
-          <p>I wanted an AI agent to help run a Gumroad store, but not with the power to issue refunds or replace files buyers had already paid for.</p>
-          <p class="case__label">What it does</p>
-          <p>An MCP server that gives agents read and write access to a Gumroad store and keeps irreversible commands switched off unless you turn them on.</p>
-          <ul class="tags"><li>Go</li><li>MCP</li></ul>
-          <p class="project__status">Repository publishing soon</p>
-        </div>
-        <figure class="shot">
-          <img src="img/gumroad-mcp.png" alt="gumroad-mcp allowing a product list and refusing an irreversible file update and a refund." width="1280" height="720" loading="lazy">
-          <figcaption>agent session, sample data</figcaption>
+          <img src="img/recall-ui.png" alt="recall web UI listing conventions, decisions, a requirement and an error, with one decision open showing its content, tags and trust score." width="1400" height="640" loading="lazy">
+          <figcaption>recall web UI, sample data</figcaption>
         </figure>
       </article>
       <article class="project">
@@ -140,10 +140,10 @@
       <div class="more">
         <h3 class="more__title">More projects</h3>
         <div class="work-grid">
-          <article><h4>brik8s</h4><p>A single-binary Kubernetes distribution with containerd and etcd built in. It starts CIS Level 1 hardened, with SELinux, FIPS mode and secrets encryption on, and rotates its own certificates. I built it to stop repeating the same hardening checklist on small and disconnected hardware.</p><ul class="tags"><li>Go</li><li>containerd</li><li>etcd</li></ul><p class="project__status">Private repository · walkthrough on request</p></article>
+          <article><h4>The Tavern</h4><p>Fifteen Claude Code plugins for writing specs, building in parallel and reviewing UX, each with guardrails. The git guard lets a run commit locally but blocks every way of publishing, even with permissions bypassed, and a separate agent checks the work.</p><ul class="tags"><li>Python</li><li>Claude Code plugins</li></ul><p class="project__status">Repository publishing soon</p></article>
+          <article><h4>redpen</h4><p>A linter that scans a project's source and its rendered page for the patterns that make UI, code and docs read as machine-made, and scores the result on two separate axes: slop and quality.</p><ul class="tags"><li>TypeScript</li><li>Playwright</li></ul><p class="project__status">Repository publishing soon</p></article>
+          <article><h4>gumroad-mcp</h4><p>An MCP server that gives agents read and write access to a Gumroad store and keeps irreversible commands switched off unless you turn them on.</p><ul class="tags"><li>Go</li><li>MCP</li></ul><p class="project__status">Repository publishing soon</p></article>
           <article><h4>sluice</h4><p>A DORA metrics service that works out deploy frequency, lead time, change failure rate and time to restore from an append-only log of GitHub, GitLab and Slack events, so the numbers come from what happened instead of a spreadsheet.</p><ul class="tags"><li>Go</li><li>PostgreSQL</li><li>React</li></ul><p class="project__status">Repository publishing soon</p></article>
-          <article><h4>recall</h4><p>A self-hosted memory server that a team's coding agents share, built on an open-source project I extended. Agents read and write conventions, decisions and known errors through MCP or plain HTTP.</p><ul class="tags"><li>Python</li><li>PostgreSQL</li><li>MCP</li></ul><p class="project__status">Repository publishing soon</p></article>
-          <article><h4>mozza</h4><p>A deployment compiler: short, plain-English recipe files compile to Kubernetes manifests, with Docker Compose import and deploy, logs and rollback commands.</p><ul class="tags"><li>Go</li><li>Kubernetes</li></ul><p class="project__status">Repository publishing soon</p></article>
           <article><h4>Annex</h4><p>A macOS app for running a team of Claude Code agents, where work only counts as done after it has been checked, reviewed and checked again.</p><ul class="tags"><li>TypeScript</li><li>Swift</li></ul><p class="project__status">Repository publishing soon</p></article>
           <article><h4>Perspectiv</h4><p>A storytelling forum tied to a place and a date, where everyone who was there writes their side. A full-stack Go and React app with its security state, such as lockouts and rate limits, kept in PostgreSQL.</p><ul class="tags"><li>Go</li><li>React</li><li>PostgreSQL</li></ul><p class="project__status">Repository publishing soon</p></article>
         </div>
@@ -207,7 +207,7 @@
 <section id="contact">
   <div class="wrap">
     <h2><span>Contact</span></h2>
-    <p>I'm open to DevSecOps, platform and cloud engineering roles. Email is the fastest way to reach me, and I'm happy to send my resume.</p>
+    <p>I'm open to DevSecOps, platform and cloud engineering roles. Email is the fastest way to reach me, at <a href="mailto:sheppard.garrett0@gmail.com">sheppard.garrett0@gmail.com</a>, and I'm happy to send my resume.</p>
     <ul class="contact-links">
       <li><a href="mailto:sheppard.garrett0@gmail.com">Email</a></li>
       <li><a href="https://linkedin.com/in/garrettsheppard1a">LinkedIn</a></li>
