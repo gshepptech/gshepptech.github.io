@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Garrett Sheppard · DevSecOps and Platform Engineer</title>
-<meta name="description" content="DevSecOps and platform engineer building secure applications, platforms and infrastructure for DoD and federal programs, from AWS GovCloud and Azure Government to fully disconnected sites.">
+<meta name="description" content="Projects and work by Garrett Sheppard, a DevSecOps and platform engineer who builds secure applications, platforms and infrastructure for DoD and federal programs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23e6d84a'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' text-anchor='middle' fill='%231f2a22'%3EGS%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%23e8581f'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' text-anchor='middle' fill='%231c1f26'%3EGS%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -19,8 +19,8 @@
   <div class="wrap">
     <a class="nav__name" href="#top">Garrett Sheppard</a>
     <ul class="nav__links">
-      <li><a href="#work">Work</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#work">Work</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -30,104 +30,50 @@
 <main id="top">
 
 <section class="hero">
-  <div class="wrap split">
-    <div>
-      <h1>Garrett Sheppard</h1>
-      <p class="hero__title">DevSecOps and Platform Engineer</p>
-      <p class="hero__pitch">I build secure applications, platforms and infrastructure for DoD and federal programs, from AWS GovCloud and Azure Government to fully disconnected sites.</p>
-      <p class="muted">Infrastructure as code, Kubernetes platforms, secure CI/CD, STIG compliance automation and IL4/IL5 environments. I also write hands-on courses and train customer engineering teams.</p>
-    </div>
-    <dl class="facts" aria-label="At a glance">
-      <dt>Clearance</dt><dd>Active Secret</dd>
-      <dt>Experience</dt><dd>Five years in DevSecOps and platform engineering</dd>
-      <dt>Clouds</dt><dd>AWS GovCloud, Azure Government, VMware vSphere</dd>
-      <dt>Focus</dt><dd>Air-gapped delivery, IL4/IL5, STIG automation</dd>
-      <dt>Service</dt><dd>U.S. Army veteran</dd>
-      <dt>Location</dt><dd>Maryland (DC area)</dd>
-    </dl>
-  </div>
-</section>
-
-<section id="work">
   <div class="wrap">
-    <h2><span>Work</span></h2>
-
-    <div class="split">
-      <div>
-        <h3>Infrastructure platform for disconnected DoD sites</h3>
-        <p>I co-developed a Go platform that provisions, upgrades and backs up Kubernetes clusters and VMs across AWS GovCloud, Azure Government and vSphere, including sites with no internet connection.</p>
-        <p>I designed and built its air-gap delivery system, which bundles every OS package, container image and Helm chart a site needs into a signed offline bundle, with an optional FIPS mode. I also built the orchestration that deploys FreeIPA, HAProxy and Sonatype Nexus across nodes, and automated 136 CIS and RHEL STIG hardening checks with remediation.</p>
-      </div>
-      <dl class="facts">
-        <dt>Role</dt><dd>Co-developer; designed the air-gap delivery system</dd>
-        <dt>Result</dt><dd>In testing, bootstrapped the platform at a disconnected VMware site in under 6 minutes</dd>
-        <dt>Security</dt><dd>136 automated CIS and STIG checks, image scanning with SBOMs</dd>
-        <dt>Stack</dt><dd><ul class="tags"><li>Go</li><li>Crossplane</li><li>Cluster API</li><li>PostgreSQL</li><li>Packer</li><li>Ansible</li></ul></dd>
-      </dl>
+    <h1>Garrett Sheppard</h1>
+    <p class="hero__title">DevSecOps and Platform Engineer</p>
+    <p class="hero__pitch">I build secure applications, platforms and infrastructure for DoD and federal programs, from AWS GovCloud and Azure Government to sites with no internet at all. On my own time I build developer tools, mostly for running AI coding agents safely.</p>
+    <div class="actions">
+      <a class="btn btn--primary" href="#projects">See the projects</a>
+      <a class="btn" href="mailto:sheppard.garrett0@gmail.com">Email me</a>
     </div>
-
-    <div class="split split--flip">
-      <div>
-        <h3>Hands-on e-learning platform</h3>
-        <p>I developed a multi-tenant e-learning platform where learners take courses and work through graded live labs, from Kubernetes pods to cloud VMs. Tenants are isolated with namespaces, network policy and row-level security.</p>
-        <p>Its GitHub Actions pipeline signs every image, attaches SBOMs and provenance, and gates releases on security scans, with staged promotion and one-step rollback. I wrote and adapted the courses and taught three-day instructor-led training for customer teams.</p>
-      </div>
-      <dl class="facts">
-        <dt>Courses</dt><dd>Nearly 70 hands-on courses, 700+ lessons</dd>
-        <dt>Topics</dt><dd>Linux, Kubernetes, Terraform, CI/CD, Istio, Vault, Kyverno, Falco</dd>
-        <dt>Pipeline</dt><dd>cosign, SBOMs, CodeQL, gosec, gitleaks, Trivy, OWASP ZAP</dd>
-        <dt>Stack</dt><dd><ul class="tags"><li>Go</li><li>React</li><li>PostgreSQL</li><li>Helm</li><li>GitHub Actions</li></ul></dd>
-      </dl>
-    </div>
-
-    <div class="split">
-      <div>
-        <h3>IL4/IL5 cloud infrastructure</h3>
-        <p>I helped architect a DoD command's IL4 and IL5 Azure Government environment in Terraform, covering hub-and-spoke networking, AKS and virtual machines, Key Vault, private endpoints and Azure Policy.</p>
-        <p>I deployed the command's leadership applications into the new environment and re-platformed a communications app for Azure Government.</p>
-      </div>
-      <dl class="facts">
-        <dt>Role</dt><dd>Engineering team member</dd>
-        <dt>Environment</dt><dd>Azure Government, IL4 and IL5</dd>
-        <dt>Stack</dt><dd><ul class="tags"><li>Terraform</li><li>AKS</li><li>Key Vault</li><li>Azure Policy</li></ul></dd>
-      </dl>
-    </div>
-
-    <div class="split split--flip">
-      <div>
-        <h3>Multi-agent development framework</h3>
-        <p>I created an open-source multi-agent development framework for Claude Code that became the company's standard workflow. Agent teams build from a spec, a separate agent checks each change against every requirement, and guardrail hooks block destructive commands.</p>
-        <p>I also extended an open-source agent memory server into a shared knowledge store for the team's coding agents, with codebase indexing and retrieval scoring.</p>
-      </div>
-      <dl class="facts">
-        <dt>Adoption</dt><dd>The company's standard AI development workflow</dd>
-        <dt>Stack</dt><dd><ul class="tags"><li>Claude Code</li><li>MCP</li><li>Python</li><li>pgvector</li></ul></dd>
-      </dl>
-    </div>
+    <p class="hero__meta">Active Secret clearance · Five years in DevSecOps · U.S. Army veteran · Maryland (DC area)</p>
   </div>
 </section>
 
 <section id="projects">
   <div class="wrap">
-    <h2><span>Personal projects</span></h2>
+    <h2><span>Projects</span></h2>
     <div class="projects">
+
       <article class="project">
         <div>
           <h3>keep</h3>
-          <p>A single-binary work tracker on SQLite, exposed over MCP, that Claude Code and Codex agents share: items, dependencies, a ranked ready list and claims. A loopback dashboard shows what is workable and what is held back.</p>
+          <p class="case__label">Problem</p>
+          <p>When several AI agents work in one repository, each keeps its own to-do list. Two agents pick up the same task, or work starts on something blocked by another item.</p>
+          <p class="case__label">What I built</p>
+          <p>A single Go binary that keeps one work queue in SQLite and serves it over MCP, so Claude Code and Codex read and claim from the same list. Items carry dependencies, so the ready list only shows work that can actually start. A local dashboard shows what is workable, what is blocked and which agent holds what.</p>
           <ul class="tags"><li>Go</li><li>SQLite</li><li>MCP</li></ul>
           <p class="project__status">Repository publishing soon</p>
         </div>
         <figure class="shot">
-          <img src="img/keep-board.png" alt="keep dashboard: a ranked queue of two workable items, two items held back while an agent has the files open, and the live agent list." width="1414" height="1282" loading="lazy">
-          <figcaption>keep board --web</figcaption>
+          <picture>
+            <source srcset="img/keep-board.png" media="(prefers-reduced-motion: reduce)">
+            <img src="img/keep-demo.gif" alt="keep dashboard: an agent starts the top item in the ranked queue, the board moves it to in progress, and closing it removes it from the board." width="1414" height="1282" loading="lazy">
+          </picture>
+          <figcaption>keep board --web, sample data</figcaption>
         </figure>
       </article>
+
       <article class="project">
         <div>
           <h3>interlock</h3>
-          <p>Lets Claude Code and Codex agents edit one codebase at the same time without overwriting each other's changes. Agents hold the files they are working on; a collision is blocked before it happens, and the panel shows who holds what.</p>
-          <ul class="tags"><li>Go</li><li>Hooks</li></ul>
+          <p class="case__label">Problem</p>
+          <p>Two coding agents editing the same checkout overwrite each other's changes, and neither one notices until the tests break.</p>
+          <p class="case__label">What I built</p>
+          <p>Hooks that make each agent hold the files it is editing. When a second agent reaches for a held file, the edit is blocked before it lands and the agent is told who has it. A panel shows every hold, handoff and stopped collision as it happens.</p>
+          <ul class="tags"><li>Go</li><li>Claude Code hooks</li><li>Codex</li></ul>
           <p class="project__status">Repository publishing soon</p>
         </div>
         <figure class="shot">
@@ -135,36 +81,78 @@
             <source srcset="img/interlock-dark.png" media="(prefers-color-scheme: dark)">
             <img src="img/interlock-light.png" alt="interlock panel: two agents, five files held, two collisions stopped, with the file holds and activity log." width="1240" height="1003" loading="lazy">
           </picture>
-          <figcaption>interlock panel</figcaption>
+          <figcaption>interlock panel, sample data</figcaption>
         </figure>
       </article>
+
       <article class="project">
         <div>
           <h3>The Tavern</h3>
-          <p>Fifteen Claude Code plugins for AI-assisted development: spec writing, parallel builds with independent verification, persona-based UX review and guardrail hooks. The git guard lets an unattended run commit but never publish.</p>
-          <ul class="tags"><li>Claude Code</li><li>Python</li></ul>
+          <p class="case__label">Problem</p>
+          <p>An agent left to run on its own can push code nobody reviewed, or report work as done that it never checked.</p>
+          <p class="case__label">What I built</p>
+          <p>Fifteen Claude Code plugins for writing specs, building in parallel and reviewing UX, each with guardrails. The git guard lets an unattended run commit locally but blocks every way of publishing, even when permissions are bypassed. A separate agent verifies the work instead of the one that wrote it.</p>
+          <ul class="tags"><li>Python</li><li>Claude Code plugins</li></ul>
           <p class="project__status">Repository publishing soon</p>
         </div>
         <figure class="shot">
           <img src="img/tavern-tests.png" alt="Terminal output: the git guard allowing commits and denying pushes, and all ten plugin test suites passing, 539 tests." width="1516" height="1036" loading="lazy">
-          <figcaption>git guard and test suites, actual output</figcaption>
+          <figcaption>git guard decisions and the test suites, actual output</figcaption>
         </figure>
       </article>
+
       <article class="project project--text">
         <div>
           <h3>sluice</h3>
-          <p>A DORA metrics service that calculates deploy frequency, lead time, change failure rate and time to restore from an append-only event log fed by GitHub, GitLab and Slack. Ships as a distroless non-root image with security scans and a Prometheus and Grafana stack.</p>
+          <p class="case__label">Problem</p>
+          <p>Teams track DORA metrics by hand in spreadsheets, so the numbers are late and nobody trusts them.</p>
+          <p class="case__label">What I built</p>
+          <p>A service that takes events from GitHub, GitLab and Slack, stores them in an append-only log in PostgreSQL, and works out deploy frequency, lead time, change failure rate and time to restore from that log. It ships as a distroless non-root image, scanned with gosec, govulncheck and gitleaks, with integration tests against a real database and its own Prometheus and Grafana dashboards.</p>
           <ul class="tags"><li>Go</li><li>Connect-RPC</li><li>PostgreSQL</li><li>React</li><li>Prometheus</li></ul>
           <p class="project__status">Repository publishing soon</p>
         </div>
       </article>
+
       <article class="project project--text">
         <div>
           <h3>brik8s</h3>
-          <p>A single-binary Kubernetes distribution with containerd and etcd built in. CIS Level 1 hardened by default, with SELinux, FIPS mode, secrets encryption and automatic certificate rotation.</p>
+          <p class="case__label">Problem</p>
+          <p>Getting a hardened Kubernetes cluster onto small or disconnected hardware usually means a long checklist of manual steps.</p>
+          <p class="case__label">What I built</p>
+          <p>A single-binary Kubernetes distribution with containerd and etcd built in. It starts CIS Level 1 hardened, with SELinux, FIPS mode and secrets encryption on by default, rotates its own certificates and mirrors images between nodes.</p>
           <ul class="tags"><li>Go</li><li>containerd</li><li>etcd</li><li>Helm</li></ul>
           <p class="project__status">Private repository · walkthrough on request</p>
         </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2><span>Professional work</span></h2>
+    <p class="muted">Company and government work, described at the level I can share publicly.</p>
+    <div class="work-grid">
+      <article>
+        <h3>Infrastructure platform for disconnected DoD sites</h3>
+        <p>Co-developed a Go platform that provisions, upgrades and backs up Kubernetes clusters and VMs across AWS GovCloud, Azure Government and vSphere. I designed its air-gap delivery system, which packs everything a site needs into one signed offline bundle.</p>
+        <p class="result">In testing: platform bootstrapped at a disconnected VMware site in under 6 minutes</p>
+      </article>
+      <article>
+        <h3>E-learning platform with live labs</h3>
+        <p>Built a multi-tenant platform where learners work through graded labs on real Kubernetes and cloud resources, released through a signed, scanned pipeline with one-step rollback. Wrote and adapted the courses and taught customer teams in person.</p>
+        <p class="result">Nearly 70 courses, more than 700 lessons</p>
+      </article>
+      <article>
+        <h3>IL4/IL5 cloud for a DoD command</h3>
+        <p>Helped architect a DoD command's IL4 and IL5 Azure Government environment in Terraform, then moved its leadership applications in and re-platformed a communications app for government cloud.</p>
+        <p class="result">Hub-and-spoke networking, AKS, Key Vault, Azure Policy</p>
+      </article>
+      <article>
+        <h3>Multi-agent development framework</h3>
+        <p>Created an open-source framework for Claude Code where agent teams build from a spec and a separate agent checks each change against every requirement. It became the company's standard way of working with AI.</p>
+        <p class="result">Adopted as the company's standard workflow</p>
       </article>
     </div>
   </div>
@@ -185,31 +173,17 @@
         <span class="timeline__when">2016 – 2022</span>
         <div>
           <h3>U.S. Army · Combat Medic (68W), Sergeant</h3>
-          <p class="muted">Served as section NCOIC in a staff sergeant billet, leading medical operations, logistics and mission planning for a company-sized unit.</p>
+          <p class="muted">Section NCOIC in a staff sergeant billet, running medical operations, logistics and mission planning for a company-sized unit.</p>
         </div>
       </li>
     </ol>
   </div>
 </section>
 
-<section id="skills">
-  <div class="wrap">
-    <h2><span>Skills</span></h2>
-    <dl class="skills">
-      <dt>Cloud</dt><dd>AWS and GovCloud, Azure and Azure Government, VMware vSphere</dd>
-      <dt>Platform and IaC</dt><dd>Kubernetes, k3s, RKE2, Cluster API, Helm, Terraform, Crossplane, Ansible, Packer</dd>
-      <dt>Security</dt><dd>DISA STIGs, CIS benchmarks, NIST 800-53 and RMF, OpenSCAP, Trivy, SBOMs</dd>
-      <dt>CI/CD</dt><dd>GitHub Actions, GitLab CI, Argo CD, cosign, CodeQL, OWASP ZAP</dd>
-      <dt>Observability</dt><dd>Prometheus, Grafana, Loki, OpenTelemetry</dd>
-      <dt>Languages</dt><dd>Go, TypeScript, Python, Bash, SQL</dd>
-    </dl>
-  </div>
-</section>
-
 <section id="contact">
   <div class="wrap">
     <h2><span>Contact</span></h2>
-    <p>Open to DevSecOps, platform and cloud engineering roles. My resume is available on request.</p>
+    <p>I'm open to DevSecOps, platform and cloud engineering roles. Email is the fastest way to reach me, and I'm happy to send my resume.</p>
     <ul class="contact-links">
       <li><a href="mailto:sheppard.garrett0@gmail.com">Email</a></li>
       <li><a href="https://linkedin.com/in/garrettsheppard1a">LinkedIn</a></li>

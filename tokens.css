@@ -1,24 +1,24 @@
-/* Hallmark · macrostructure: Split Studio · tone: technical field notebook · anchor hue: sage 110
- * theme: custom (vibe: "survey field notebook, highlighter marks, plain ink")
- * paper oklch(95.5% 0.016 110) · accent oklch(88% 0.16 98) highlighter
+/* Hallmark · macrostructure: Split Studio (case-study rows) · tone: technical drafting sheet · anchor hue: international orange 42
+ * theme: custom (vibe: "engineering drawing sheet, graphite ink, safety orange marks")
+ * paper oklch(94.5% 0.006 250) cool grey · accent oklch(64% 0.2 42) international orange
  * display: Cabinet Grotesk · body: Spectral · mono: Martian Mono
- * axes: light / grotesk-sans display + serif body / chromatic-other (yellow-green)
- * nav: N9 edge-aligned · footer: Ft1 minimal · enrichment: real screenshots (figures)
+ * axes: light / grotesk-sans display + serif body / warm (orange) on cool neutral
+ * nav: N9 edge-aligned · footer: Ft1 minimal · enrichment: real screenshots in figures
  */
 :root {
   --font-display: "Cabinet Grotesk", "Arial Narrow", sans-serif;
   --font-body: "Spectral", Cambria, "Times New Roman", serif;
   --font-mono: "Martian Mono", "SF Mono", Menlo, monospace;
 
-  --color-paper: oklch(95.5% 0.016 110);
-  --color-paper-2: oklch(92.5% 0.02 112);
-  --color-ink: oklch(21% 0.025 150);
-  --color-ink-soft: oklch(40% 0.03 150);
-  --color-rule: oklch(80% 0.03 120);
-  --color-accent: oklch(88% 0.16 98);
-  --color-accent-ink: oklch(21% 0.025 150);
-  --color-link: oklch(36% 0.08 150);
-  --color-focus: oklch(45% 0.14 150);
+  --color-paper: oklch(94.5% 0.006 250);
+  --color-paper-2: oklch(91% 0.008 250);
+  --color-ink: oklch(22% 0.012 260);
+  --color-ink-soft: oklch(42% 0.014 260);
+  --color-rule: oklch(80% 0.01 250);
+  --color-accent: oklch(64% 0.2 42);
+  --color-accent-ink: oklch(18% 0.012 260);
+  --color-link: oklch(22% 0.012 260);
+  --color-focus: oklch(55% 0.2 42);
 
   --text-xs: 0.75rem;
   --text-sm: 0.9375rem;
@@ -37,8 +37,8 @@
   --space-2xl: 3rem;
   --space-3xl: 5.5rem;
 
-  --radius-sm: 3px;
-  --radius-md: 4px;
+  --radius-sm: 2px;
+  --radius-md: 3px;
   --rule-hair: 1px;
   --rule-heavy: 3px;
 
@@ -51,14 +51,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --color-paper: oklch(19% 0.022 150);
-    --color-paper-2: oklch(23% 0.026 150);
-    --color-ink: oklch(93% 0.018 110);
-    --color-ink-soft: oklch(76% 0.025 115);
-    --color-rule: oklch(35% 0.03 145);
-    --color-accent: oklch(86% 0.15 98);
-    --color-accent-ink: oklch(19% 0.022 150);
-    --color-link: oklch(88% 0.12 100);
-    --color-focus: oklch(86% 0.15 98);
+    --color-paper: oklch(20% 0.01 260);
+    --color-paper-2: oklch(24% 0.012 260);
+    --color-ink: oklch(93% 0.005 250);
+    --color-ink-soft: oklch(75% 0.01 250);
+    --color-rule: oklch(36% 0.012 260);
+    --color-accent: oklch(71% 0.18 45);
+    --color-accent-ink: oklch(18% 0.012 260);
+    --color-link: oklch(93% 0.005 250);
+    --color-focus: oklch(75% 0.17 45);
   }
 }
