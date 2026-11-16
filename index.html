@@ -33,7 +33,7 @@
   <div class="wrap">
     <h1>Garrett Sheppard</h1>
     <p class="hero__title">DevSecOps and Platform Engineer</p>
-    <p class="hero__pitch">I build secure applications, platforms and infrastructure for DoD and federal programs, from AWS GovCloud and Azure Government to sites with no internet at all. On my own time I build developer tools, mostly for running AI coding agents safely.</p>
+    <p class="hero__pitch">I build secure applications, platforms and infrastructure for DoD and federal programs, from AWS GovCloud and Azure Government to sites with no internet at all. Most of the projects below started the same way: my team or I hit a problem with no good tool for it, so I built one, or took an existing tool and extended it.</p>
     <div class="actions">
       <a class="btn btn--primary" href="#projects">See the projects</a>
       <a class="btn" href="mailto:sheppard.garrett0@gmail.com">Email me</a>
@@ -46,52 +46,43 @@
   <div class="wrap">
     <h2><span>Projects</span></h2>
     <div class="projects">
-
       <article class="project">
         <div>
           <h3>keep</h3>
-          <p class="case__label">Problem</p>
-          <p>When several AI agents work in one repository, each keeps its own to-do list. Two agents pick up the same task, or work starts on something blocked by another item.</p>
-          <p class="case__label">What I built</p>
-          <p>A single Go binary that keeps one work queue in SQLite and serves it over MCP, so Claude Code and Codex read and claim from the same list. Items carry dependencies, so the ready list only shows work that can actually start. A local dashboard shows what is workable, what is blocked and which agent holds what.</p>
+          <p class="case__label">Why I built it</p>
+          <p>My team runs several AI coding agents in the same repositories, and each one kept its own to-do list. Two agents would pick up the same task, or start on something that was still blocked.</p>
+          <p class="case__label">What it does</p>
+          <p>A single Go binary that keeps one work queue in SQLite and serves it over MCP, so Claude Code and Codex claim work from the same list. Dependencies keep blocked items out of the ready list, and a local dashboard shows what each agent holds.</p>
           <ul class="tags"><li>Go</li><li>SQLite</li><li>MCP</li></ul>
           <p class="project__status">Repository publishing soon</p>
         </div>
         <figure class="shot">
-          <picture>
-            <source srcset="img/keep-board.png" media="(prefers-reduced-motion: reduce)">
-            <img src="img/keep-demo.gif" alt="keep dashboard: an agent starts the top item in the ranked queue, the board moves it to in progress, and closing it removes it from the board." width="1414" height="1282" loading="lazy">
-          </picture>
+          <picture><source srcset="img/keep-board.png" media="(prefers-reduced-motion: reduce)"><img src="img/keep-demo.gif" alt="keep dashboard: an agent starts the top item in the ranked queue, the board moves it to in progress, and closing it removes it from the board." width="1414" height="1282" loading="lazy"></picture>
           <figcaption>keep board --web, sample data</figcaption>
         </figure>
       </article>
-
       <article class="project">
         <div>
           <h3>interlock</h3>
-          <p class="case__label">Problem</p>
-          <p>Two coding agents editing the same checkout overwrite each other's changes, and neither one notices until the tests break.</p>
-          <p class="case__label">What I built</p>
-          <p>Hooks that make each agent hold the files it is editing. When a second agent reaches for a held file, the edit is blocked before it lands and the agent is told who has it. A panel shows every hold, handoff and stopped collision as it happens.</p>
+          <p class="case__label">Why I built it</p>
+          <p>Running two agents in one checkout meant they overwrote each other's edits, and nobody found out until the tests broke. Nothing existing handled it across both Claude Code and Codex.</p>
+          <p class="case__label">What it does</p>
+          <p>Hooks that make each agent hold the files it is editing. A second agent reaching for a held file is blocked before the edit lands and told who has it. A panel shows every hold, handoff and stopped collision.</p>
           <ul class="tags"><li>Go</li><li>Claude Code hooks</li><li>Codex</li></ul>
           <p class="project__status">Repository publishing soon</p>
         </div>
         <figure class="shot">
-          <picture>
-            <source srcset="img/interlock-dark.png" media="(prefers-color-scheme: dark)">
-            <img src="img/interlock-light.png" alt="interlock panel: two agents, five files held, two collisions stopped, with the file holds and activity log." width="1240" height="1003" loading="lazy">
-          </picture>
+          <picture><source srcset="img/interlock-dark.png" media="(prefers-color-scheme: dark)"><img src="img/interlock-light.png" alt="interlock panel: two agents, five files held, two collisions stopped, with the file holds and activity log." width="1240" height="1003" loading="lazy"></picture>
           <figcaption>interlock panel, sample data</figcaption>
         </figure>
       </article>
-
       <article class="project">
         <div>
           <h3>The Tavern</h3>
-          <p class="case__label">Problem</p>
-          <p>An agent left to run on its own can push code nobody reviewed, or report work as done that it never checked.</p>
-          <p class="case__label">What I built</p>
-          <p>Fifteen Claude Code plugins for writing specs, building in parallel and reviewing UX, each with guardrails. The git guard lets an unattended run commit locally but blocks every way of publishing, even when permissions are bypassed. A separate agent verifies the work instead of the one that wrote it.</p>
+          <p class="case__label">Why I built it</p>
+          <p>I wanted agents I could leave running unattended without worrying that they would push unreviewed code or call work done that they never checked.</p>
+          <p class="case__label">What it does</p>
+          <p>Fifteen Claude Code plugins for writing specs, building in parallel and reviewing UX, each with guardrails. The git guard lets a run commit locally but blocks every way of publishing, even with permissions bypassed, and a separate agent checks the work.</p>
           <ul class="tags"><li>Python</li><li>Claude Code plugins</li></ul>
           <p class="project__status">Repository publishing soon</p>
         </div>
@@ -100,32 +91,63 @@
           <figcaption>git guard decisions and the test suites, actual output</figcaption>
         </figure>
       </article>
-
-      <article class="project project--text">
+      <article class="project">
         <div>
-          <h3>sluice</h3>
-          <p class="case__label">Problem</p>
-          <p>Teams track DORA metrics by hand in spreadsheets, so the numbers are late and nobody trusts them.</p>
-          <p class="case__label">What I built</p>
-          <p>A service that takes events from GitHub, GitLab and Slack, stores them in an append-only log in PostgreSQL, and works out deploy frequency, lead time, change failure rate and time to restore from that log. It ships as a distroless non-root image, scanned with gosec, govulncheck and gitleaks, with integration tests against a real database and its own Prometheus and Grafana dashboards.</p>
-          <ul class="tags"><li>Go</li><li>Connect-RPC</li><li>PostgreSQL</li><li>React</li><li>Prometheus</li></ul>
+          <h3>redpen</h3>
+          <p class="case__label">Why I built it</p>
+          <p>AI-generated pages, code and docs share the same tells, and I wanted a way to catch them in review instead of by eye.</p>
+          <p class="case__label">What it does</p>
+          <p>A linter that scans a project's source and its rendered page for the patterns that make UI, code and docs read as machine-made, and scores the result on two separate axes: slop and quality.</p>
+          <ul class="tags"><li>TypeScript</li><li>Playwright</li></ul>
           <p class="project__status">Repository publishing soon</p>
         </div>
+        <figure class="shot">
+          <img src="img/redpen-demo.gif" alt="redpen scanning a page and reporting a slop score and a quality score with its findings." width="1200" height="675" loading="lazy">
+          <figcaption>redpen scan, sample page</figcaption>
+        </figure>
       </article>
-
-      <article class="project project--text">
+      <article class="project">
         <div>
-          <h3>brik8s</h3>
-          <p class="case__label">Problem</p>
-          <p>Getting a hardened Kubernetes cluster onto small or disconnected hardware usually means a long checklist of manual steps.</p>
-          <p class="case__label">What I built</p>
-          <p>A single-binary Kubernetes distribution with containerd and etcd built in. It starts CIS Level 1 hardened, with SELinux, FIPS mode and secrets encryption on by default, rotates its own certificates and mirrors images between nodes.</p>
-          <ul class="tags"><li>Go</li><li>containerd</li><li>etcd</li><li>Helm</li></ul>
-          <p class="project__status">Private repository · walkthrough on request</p>
+          <h3>gumroad-mcp</h3>
+          <p class="case__label">Why I built it</p>
+          <p>I wanted an AI agent to help run a Gumroad store, but not with the power to issue refunds or replace files buyers had already paid for.</p>
+          <p class="case__label">What it does</p>
+          <p>An MCP server that gives agents read and write access to a Gumroad store and keeps irreversible commands switched off unless you turn them on.</p>
+          <ul class="tags"><li>Go</li><li>MCP</li></ul>
+          <p class="project__status">Repository publishing soon</p>
         </div>
+        <figure class="shot">
+          <img src="img/gumroad-mcp.png" alt="gumroad-mcp allowing a product list and refusing an irreversible file update and a refund." width="1280" height="720" loading="lazy">
+          <figcaption>agent session, sample data</figcaption>
+        </figure>
       </article>
-
+      <article class="project">
+        <div>
+          <h3>Quietword</h3>
+          <p class="case__label">Why I built it</p>
+          <p>People shipping apps built with AI coding tools rarely get anyone to look at them, and most security scanners produce reports they can't act on.</p>
+          <p class="case__label">What it does</p>
+          <p>A free scan: paste a URL and get a plain-language report on five common holes, with what someone could do with each finding and what to fix first.</p>
+          <ul class="tags"><li>TypeScript</li><li>Next.js</li></ul>
+          <p class="project__status">Repository publishing soon</p>
+        </div>
+        <figure class="shot">
+          <img src="img/quietword-report.png" alt="Quietword scan report: one finding worth fixing, three that look fine and one that could not be checked." width="880" height="924" loading="lazy">
+          <figcaption>scan report, example domain</figcaption>
+        </figure>
+      </article>
     </div>
+      <div class="more">
+        <h3 class="more__title">More projects</h3>
+        <div class="work-grid">
+          <article><h4>brik8s</h4><p>A single-binary Kubernetes distribution with containerd and etcd built in. It starts CIS Level 1 hardened, with SELinux, FIPS mode and secrets encryption on, and rotates its own certificates. I built it to stop repeating the same hardening checklist on small and disconnected hardware.</p><ul class="tags"><li>Go</li><li>containerd</li><li>etcd</li></ul><p class="project__status">Private repository · walkthrough on request</p></article>
+          <article><h4>sluice</h4><p>A DORA metrics service that works out deploy frequency, lead time, change failure rate and time to restore from an append-only log of GitHub, GitLab and Slack events, so the numbers come from what happened instead of a spreadsheet.</p><ul class="tags"><li>Go</li><li>PostgreSQL</li><li>React</li></ul><p class="project__status">Repository publishing soon</p></article>
+          <article><h4>recall</h4><p>A self-hosted memory server that a team's coding agents share, built on an open-source project I extended. Agents read and write conventions, decisions and known errors through MCP or plain HTTP.</p><ul class="tags"><li>Python</li><li>PostgreSQL</li><li>MCP</li></ul><p class="project__status">Repository publishing soon</p></article>
+          <article><h4>mozza</h4><p>A deployment compiler: short, plain-English recipe files compile to Kubernetes manifests, with Docker Compose import and deploy, logs and rollback commands.</p><ul class="tags"><li>Go</li><li>Kubernetes</li></ul><p class="project__status">Repository publishing soon</p></article>
+          <article><h4>Annex</h4><p>A macOS app for running a team of Claude Code agents, where work only counts as done after it has been checked, reviewed and checked again.</p><ul class="tags"><li>TypeScript</li><li>Swift</li></ul><p class="project__status">Repository publishing soon</p></article>
+          <article><h4>Perspectiv</h4><p>A storytelling forum tied to a place and a date, where everyone who was there writes their side. A full-stack Go and React app with its security state, such as lockouts and rate limits, kept in PostgreSQL.</p><ul class="tags"><li>Go</li><li>React</li><li>PostgreSQL</li></ul><p class="project__status">Repository publishing soon</p></article>
+        </div>
+      </div>
   </div>
 </section>
 
@@ -135,14 +157,16 @@
     <p class="muted">Company and government work, described at the level I can share publicly.</p>
     <div class="work-grid">
       <article>
-        <h3>Infrastructure platform for disconnected DoD sites</h3>
+        <h3>Pioneer: infrastructure platform for disconnected DoD sites</h3>
         <p>Co-developed a Go platform that provisions, upgrades and backs up Kubernetes clusters and VMs across AWS GovCloud, Azure Government and vSphere. I designed its air-gap delivery system, which packs everything a site needs into one signed offline bundle.</p>
         <p class="result">In testing: platform bootstrapped at a disconnected VMware site in under 6 minutes</p>
+        <p class="project__links"><a href="https://alphabravo.io">alphabravo.io</a></p>
       </article>
       <article>
-        <h3>E-learning platform with live labs</h3>
+        <h3>Waypoint: e-learning platform with live labs</h3>
         <p>Built a multi-tenant platform where learners work through graded labs on real Kubernetes and cloud resources, released through a signed, scanned pipeline with one-step rollback. Wrote and adapted the courses and taught customer teams in person.</p>
         <p class="result">Nearly 70 courses, more than 700 lessons</p>
+        <p class="project__links"><a href="https://waypoint.alphabravo.io">waypoint.alphabravo.io</a></p>
       </article>
       <article>
         <h3>IL4/IL5 cloud for a DoD command</h3>

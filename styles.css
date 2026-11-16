@@ -143,3 +143,9 @@ footer { padding-block: var(--space-xl); font-size: var(--text-xs); color: var(-
 .project--text { grid-template-columns: minmax(0, 1fr); }
 .project--text > div { max-width: 64ch; }
 @media (max-width: 26rem) { .nav__name { font-size: var(--text-base); } .nav__links li:first-child { display: none; } }
+.more { margin-top: var(--space-3xl); }
+.more__title { font-size: var(--text-xl); margin-bottom: var(--space-xl); }
+.more h4 { font-family: var(--font-mono); font-weight: 500; font-size: var(--text-lg); margin: 0 0 var(--space-xs); }
+.more .work-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 64rem) { .more .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 40rem) { .more .work-grid { grid-template-columns: minmax(0, 1fr); } }
