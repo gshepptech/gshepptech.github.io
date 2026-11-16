@@ -7,9 +7,11 @@
 <meta name="description" content="DevSecOps and platform engineer building secure applications, platforms and infrastructure for DoD and federal programs, from AWS GovCloud and Azure Government to fully disconnected sites.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232c4fb3'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' text-anchor='middle' fill='white'%3EGS%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23e6d84a'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' text-anchor='middle' fill='%231f2a22'%3EGS%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -48,7 +50,7 @@
 
 <section id="work">
   <div class="wrap">
-    <h2>Work</h2>
+    <h2><span>Work</span></h2>
 
     <div class="split">
       <div>
@@ -107,37 +109,62 @@
 
 <section id="projects">
   <div class="wrap">
-    <h2>Personal projects</h2>
+    <h2><span>Personal projects</span></h2>
     <div class="projects">
       <article class="project">
-        <h3>brik8s</h3>
-        <p>A single-binary Kubernetes distribution with containerd and etcd built in. CIS Level 1 hardened by default, with SELinux, FIPS mode, secrets encryption and automatic certificate rotation.</p>
-        <ul class="tags"><li>Go</li><li>containerd</li><li>etcd</li><li>Helm</li></ul>
-        <p class="project__status">Private repository · walkthrough on request</p>
+        <div>
+          <h3>keep</h3>
+          <p>A single-binary work tracker on SQLite, exposed over MCP, that Claude Code and Codex agents share: items, dependencies, a ranked ready list and claims. A loopback dashboard shows what is workable and what is held back.</p>
+          <ul class="tags"><li>Go</li><li>SQLite</li><li>MCP</li></ul>
+          <p class="project__status">Repository publishing soon</p>
+        </div>
+        <figure class="shot">
+          <img src="img/keep-board.png" alt="keep dashboard: a ranked queue of two workable items, two items held back while an agent has the files open, and the live agent list." width="1414" height="1282" loading="lazy">
+          <figcaption>keep board --web</figcaption>
+        </figure>
       </article>
       <article class="project">
-        <h3>sluice</h3>
-        <p>A DORA metrics service that calculates deploy frequency, lead time, change failure rate and time to restore from an append-only event log fed by GitHub, GitLab and Slack.</p>
-        <ul class="tags"><li>Go</li><li>Connect-RPC</li><li>PostgreSQL</li><li>Prometheus</li><li>Grafana</li></ul>
-        <p class="project__status">Repository publishing soon</p>
+        <div>
+          <h3>interlock</h3>
+          <p>Lets Claude Code and Codex agents edit one codebase at the same time without overwriting each other's changes. Agents hold the files they are working on; a collision is blocked before it happens, and the panel shows who holds what.</p>
+          <ul class="tags"><li>Go</li><li>Hooks</li></ul>
+          <p class="project__status">Repository publishing soon</p>
+        </div>
+        <figure class="shot">
+          <picture>
+            <source srcset="img/interlock-dark.png" media="(prefers-color-scheme: dark)">
+            <img src="img/interlock-light.png" alt="interlock panel: two agents, five files held, two collisions stopped, with the file holds and activity log." width="1240" height="1003" loading="lazy">
+          </picture>
+          <figcaption>interlock panel</figcaption>
+        </figure>
       </article>
       <article class="project">
-        <h3>keep</h3>
-        <p>A single-binary work tracker on SQLite, exposed over MCP, that Claude Code and Codex agents share: items, dependencies, a ready list and claims.</p>
-        <ul class="tags"><li>Go</li><li>SQLite</li><li>MCP</li></ul>
-        <p class="project__status">Repository publishing soon</p>
+        <div>
+          <h3>The Tavern</h3>
+          <p>Fifteen Claude Code plugins for AI-assisted development: spec writing, parallel builds with independent verification, persona-based UX review and guardrail hooks. The git guard lets an unattended run commit but never publish.</p>
+          <ul class="tags"><li>Claude Code</li><li>Python</li></ul>
+          <p class="project__status">Repository publishing soon</p>
+        </div>
+        <figure class="shot">
+          <img src="img/tavern-tests.png" alt="Terminal output: the git guard allowing commits and denying pushes, and all ten plugin test suites passing, 539 tests." width="1516" height="1036" loading="lazy">
+          <figcaption>git guard and test suites, actual output</figcaption>
+        </figure>
       </article>
-      <article class="project">
-        <h3>interlock</h3>
-        <p>Lets Claude Code and Codex agents edit one codebase at the same time without overwriting each other's changes.</p>
-        <ul class="tags"><li>Go</li><li>Hooks</li></ul>
-        <p class="project__status">Repository publishing soon</p>
+      <article class="project project--text">
+        <div>
+          <h3>sluice</h3>
+          <p>A DORA metrics service that calculates deploy frequency, lead time, change failure rate and time to restore from an append-only event log fed by GitHub, GitLab and Slack. Ships as a distroless non-root image with security scans and a Prometheus and Grafana stack.</p>
+          <ul class="tags"><li>Go</li><li>Connect-RPC</li><li>PostgreSQL</li><li>React</li><li>Prometheus</li></ul>
+          <p class="project__status">Repository publishing soon</p>
+        </div>
       </article>
-      <article class="project">
-        <h3>The Tavern</h3>
-        <p>Fifteen Claude Code plugins for AI-assisted development: spec writing, parallel builds with independent verification, persona-based UX review and guardrail hooks.</p>
-        <ul class="tags"><li>Claude Code</li><li>Python</li></ul>
-        <p class="project__status">Repository publishing soon</p>
+      <article class="project project--text">
+        <div>
+          <h3>brik8s</h3>
+          <p>A single-binary Kubernetes distribution with containerd and etcd built in. CIS Level 1 hardened by default, with SELinux, FIPS mode, secrets encryption and automatic certificate rotation.</p>
+          <ul class="tags"><li>Go</li><li>containerd</li><li>etcd</li><li>Helm</li></ul>
+          <p class="project__status">Private repository · walkthrough on request</p>
+        </div>
       </article>
     </div>
   </div>
@@ -145,7 +172,7 @@
 
 <section id="experience">
   <div class="wrap">
-    <h2>Experience</h2>
+    <h2><span>Experience</span></h2>
     <ol class="timeline">
       <li>
         <span class="timeline__when">2022 – Present</span>
@@ -167,7 +194,7 @@
 
 <section id="skills">
   <div class="wrap">
-    <h2>Skills</h2>
+    <h2><span>Skills</span></h2>
     <dl class="skills">
       <dt>Cloud</dt><dd>AWS and GovCloud, Azure and Azure Government, VMware vSphere</dd>
       <dt>Platform and IaC</dt><dd>Kubernetes, k3s, RKE2, Cluster API, Helm, Terraform, Crossplane, Ansible, Packer</dd>
@@ -181,7 +208,7 @@
 
 <section id="contact">
   <div class="wrap">
-    <h2>Contact</h2>
+    <h2><span>Contact</span></h2>
     <p>Open to DevSecOps, platform and cloud engineering roles. My resume is available on request.</p>
     <ul class="contact-links">
       <li><a href="mailto:sheppard.garrett0@gmail.com">Email</a></li>
