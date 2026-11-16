@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garrett Sheppard · DevSecOps and Platform Engineer</title>
+<meta name="description" content="DevSecOps and platform engineer building secure Kubernetes and cloud infrastructure for DoD and federal programs, from AWS GovCloud and Azure Government to fully disconnected sites.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232c4fb3'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' text-anchor='middle' fill='white'%3EGS%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="nav__name" href="#top">Garrett Sheppard</a>
+    <ul class="nav__links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap split">
+    <div>
+      <h1>Garrett Sheppard</h1>
+      <p class="hero__title">DevSecOps and Platform Engineer</p>
+      <p class="hero__pitch">I build and secure Kubernetes and cloud infrastructure for DoD and federal programs, from AWS GovCloud and Azure Government to fully disconnected sites.</p>
+      <p class="muted">Infrastructure as code, Kubernetes platforms, secure CI/CD, STIG compliance automation and IL4/IL5 environments. I also write hands-on courses and train customer engineering teams.</p>
+    </div>
+    <dl class="facts" aria-label="At a glance">
+      <dt>Clearance</dt><dd>Active Secret</dd>
+      <dt>Experience</dt><dd>Five years in DevSecOps and platform engineering</dd>
+      <dt>Clouds</dt><dd>AWS GovCloud, Azure Government, VMware vSphere</dd>
+      <dt>Focus</dt><dd>Air-gapped delivery, IL4/IL5, STIG automation</dd>
+      <dt>Service</dt><dd>U.S. Army veteran</dd>
+      <dt>Location</dt><dd>Maryland (DC area)</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Work</h2>
+
+    <div class="split">
+      <div>
+        <h3>Infrastructure platform for disconnected DoD sites</h3>
+        <p>I co-developed a Go platform that provisions, upgrades and backs up Kubernetes clusters and VMs across AWS GovCloud, Azure Government and vSphere, including sites with no internet connection.</p>
+        <p>I designed and built its air-gap delivery system, which bundles every OS package, container image and Helm chart a site needs into a signed offline bundle, with an optional FIPS mode. I also built the orchestration that deploys FreeIPA, HAProxy and Sonatype Nexus across nodes, and automated 136 CIS and RHEL STIG hardening checks with remediation.</p>
+      </div>
+      <dl class="facts">
+        <dt>Role</dt><dd>Co-developer; designed the air-gap delivery system</dd>
+        <dt>Result</dt><dd>In testing, bootstrapped the platform at a disconnected VMware site in under 6 minutes</dd>
+        <dt>Security</dt><dd>136 automated CIS and STIG checks, image scanning with SBOMs</dd>
+        <dt>Stack</dt><dd><ul class="tags"><li>Go</li><li>Crossplane</li><li>Cluster API</li><li>PostgreSQL</li><li>Packer</li><li>Ansible</li></ul></dd>
+      </dl>
+    </div>
+
+    <div class="split split--flip">
+      <div>
+        <h3>Hands-on e-learning platform</h3>
+        <p>I developed a multi-tenant e-learning platform where learners take courses and work through graded live labs, from Kubernetes pods to cloud VMs. Tenants are isolated with namespaces, network policy and row-level security.</p>
+        <p>Its GitHub Actions pipeline signs every image, attaches SBOMs and provenance, and gates releases on security scans, with staged promotion and one-step rollback. I wrote and adapted the courses and taught three-day instructor-led training for customer teams.</p>
+      </div>
+      <dl class="facts">
+        <dt>Courses</dt><dd>Nearly 70 hands-on courses, 700+ lessons</dd>
+        <dt>Topics</dt><dd>Linux, Kubernetes, Terraform, CI/CD, Istio, Vault, Kyverno, Falco</dd>
+        <dt>Pipeline</dt><dd>cosign, SBOMs, CodeQL, gosec, gitleaks, Trivy, OWASP ZAP</dd>
+        <dt>Stack</dt><dd><ul class="tags"><li>Go</li><li>React</li><li>PostgreSQL</li><li>Helm</li><li>GitHub Actions</li></ul></dd>
+      </dl>
+    </div>
+
+    <div class="split">
+      <div>
+        <h3>IL4/IL5 cloud infrastructure</h3>
+        <p>I helped architect a DoD command's IL4 and IL5 Azure Government environment in Terraform, covering hub-and-spoke networking, AKS and virtual machines, Key Vault, private endpoints and Azure Policy.</p>
+        <p>I deployed the command's leadership applications into the new environment and re-platformed a communications app for Azure Government.</p>
+      </div>
+      <dl class="facts">
+        <dt>Role</dt><dd>Engineering team member</dd>
+        <dt>Environment</dt><dd>Azure Government, IL4 and IL5</dd>
+        <dt>Stack</dt><dd><ul class="tags"><li>Terraform</li><li>AKS</li><li>Key Vault</li><li>Azure Policy</li></ul></dd>
+      </dl>
+    </div>
+
+    <div class="split split--flip">
+      <div>
+        <h3>Multi-agent development framework</h3>
+        <p>I created an open-source multi-agent development framework for Claude Code that became the company's standard workflow. Agent teams build from a spec, a separate agent checks each change against every requirement, and guardrail hooks block destructive commands.</p>
+        <p>I also extended an open-source agent memory server into a shared knowledge store for the team's coding agents, with codebase indexing and retrieval scoring.</p>
+      </div>
+      <dl class="facts">
+        <dt>Adoption</dt><dd>The company's standard AI development workflow</dd>
+        <dt>Stack</dt><dd><ul class="tags"><li>Claude Code</li><li>MCP</li><li>Python</li><li>pgvector</li></ul></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Personal projects</h2>
+    <div class="projects">
+      <article class="project">
+        <h3>brik8s</h3>
+        <p>A single-binary Kubernetes distribution with containerd and etcd built in. CIS Level 1 hardened by default, with SELinux, FIPS mode, secrets encryption and automatic certificate rotation.</p>
+        <ul class="tags"><li>Go</li><li>containerd</li><li>etcd</li><li>Helm</li></ul>
+        <p class="project__status">Private repository · walkthrough on request</p>
+      </article>
+      <article class="project">
+        <h3>sluice</h3>
+        <p>A DORA metrics service that calculates deploy frequency, lead time, change failure rate and time to restore from an append-only event log fed by GitHub, GitLab and Slack.</p>
+        <ul class="tags"><li>Go</li><li>Connect-RPC</li><li>PostgreSQL</li><li>Prometheus</li><li>Grafana</li></ul>
+        <p class="project__status">Repository publishing soon</p>
+      </article>
+      <article class="project">
+        <h3>keep</h3>
+        <p>A single-binary work tracker on SQLite, exposed over MCP, that Claude Code and Codex agents share: items, dependencies, a ready list and claims.</p>
+        <ul class="tags"><li>Go</li><li>SQLite</li><li>MCP</li></ul>
+        <p class="project__status">Repository publishing soon</p>
+      </article>
+      <article class="project">
+        <h3>interlock</h3>
+        <p>Lets Claude Code and Codex agents edit one codebase at the same time without overwriting each other's changes.</p>
+        <ul class="tags"><li>Go</li><li>Hooks</li></ul>
+        <p class="project__status">Repository publishing soon</p>
+      </article>
+      <article class="project">
+        <h3>The Tavern</h3>
+        <p>Fifteen Claude Code plugins for AI-assisted development: spec writing, parallel builds with independent verification, persona-based UX review and guardrail hooks.</p>
+        <ul class="tags"><li>Claude Code</li><li>Python</li></ul>
+        <p class="project__status">Repository publishing soon</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <ol class="timeline">
+      <li>
+        <span class="timeline__when">2022 – Present</span>
+        <div>
+          <h3>AlphaBravo · DevSecOps Engineer II</h3>
+          <p class="muted">DevSecOps consultancy serving DoD and federal agencies.</p>
+        </div>
+      </li>
+      <li>
+        <span class="timeline__when">2016 – 2022</span>
+        <div>
+          <h3>U.S. Army · Combat Medic (68W), Sergeant</h3>
+          <p class="muted">Served as section NCOIC in a staff sergeant billet, leading medical operations, logistics and mission planning for a company-sized unit.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Cloud</dt><dd>AWS and GovCloud, Azure and Azure Government, VMware vSphere</dd>
+      <dt>Platform and IaC</dt><dd>Kubernetes, k3s, RKE2, Cluster API, Helm, Terraform, Crossplane, Ansible, Packer</dd>
+      <dt>Security</dt><dd>DISA STIGs, CIS benchmarks, NIST 800-53 and RMF, OpenSCAP, Trivy, SBOMs</dd>
+      <dt>CI/CD</dt><dd>GitHub Actions, GitLab CI, Argo CD, cosign, CodeQL, OWASP ZAP</dd>
+      <dt>Observability</dt><dd>Prometheus, Grafana, Loki, OpenTelemetry</dd>
+      <dt>Languages</dt><dd>Go, TypeScript, Python, Bash, SQL</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>Open to DevSecOps, platform and cloud engineering roles. My resume is available on request.</p>
+    <ul class="contact-links">
+      <li><a href="mailto:sheppard.garrett0@gmail.com">Email</a></li>
+      <li><a href="https://linkedin.com/in/garrettsheppard1a">LinkedIn</a></li>
+      <li><a href="https://github.com/gshepptech">GitHub</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Garrett Sheppard</div>
+</footer>
+
+</body>
+</html>
