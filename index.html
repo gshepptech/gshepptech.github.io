@@ -69,7 +69,7 @@
           <p class="case__label">What it does</p>
           <p>A deployment compiler: a plain-English recipe compiles offline into Kubernetes manifests, with health checks, replicas and dependencies filled in. It also imports Docker Compose files and has deploy, logs and rollback commands.</p>
           <ul class="tags"><li>Go</li><li>Kubernetes</li></ul>
-          <p class="project__status">Repository publishing soon</p>
+          <p class="project__links"><a href="https://github.com/gshepptech/mozza">github.com/gshepptech/mozza</a></p>
         </div>
         <figure class="shot">
           <img src="img/mozza-compile.png" alt="A mozza recipe for a frontend, API, Postgres and Redis next to the compile output that writes nine Kubernetes manifests." width="2200" height="1200" loading="lazy">
@@ -84,7 +84,7 @@
           <p class="case__label">What it does</p>
           <p>A single Go binary that keeps one work queue in SQLite and serves it over MCP, so Claude Code and Codex claim work from the same list. Dependencies keep blocked items out of the ready list, and a local dashboard shows what each agent holds.</p>
           <ul class="tags"><li>Go</li><li>SQLite</li><li>MCP</li></ul>
-          <p class="project__status">Repository publishing soon</p>
+          <p class="project__links"><a href="https://github.com/gshepptech/keep">github.com/gshepptech/keep</a></p>
         </div>
         <figure class="shot">
           <picture><source srcset="img/keep-board.png" media="(prefers-reduced-motion: reduce)"><img src="img/keep-demo.gif" alt="keep dashboard: an agent starts the top item in the ranked queue, the board moves it to in progress, and closing it removes it from the board." width="1414" height="1282" loading="lazy"></picture>
@@ -99,7 +99,7 @@
           <p class="case__label">What it does</p>
           <p>Hooks that make each agent hold the files it is editing. A second agent reaching for a held file is blocked before the edit lands and told who has it. A panel shows every hold, handoff and stopped collision.</p>
           <ul class="tags"><li>Go</li><li>Claude Code hooks</li><li>Codex</li></ul>
-          <p class="project__status">Repository publishing soon</p>
+          <p class="project__links"><a href="https://github.com/gshepptech/interlock">github.com/gshepptech/interlock</a></p>
         </div>
         <figure class="shot">
           <picture><source srcset="img/interlock-dark.png" media="(prefers-color-scheme: dark)"><img src="img/interlock-light.png" alt="interlock panel: two agents, five files held, two collisions stopped, with the file holds and activity log." width="1240" height="1003" loading="lazy"></picture>
@@ -114,7 +114,7 @@
           <p class="case__label">What it does</p>
           <p>A self-hosted memory server that a team's coding agents read and write through MCP or plain HTTP: conventions, decisions, requirements and known errors, each scored for how fresh and trusted it is.</p>
           <ul class="tags"><li>Python</li><li>PostgreSQL</li><li>MCP</li></ul>
-          <p class="project__status">Repository publishing soon</p>
+          <p class="project__links"><a href="https://github.com/gshepptech/recall">github.com/gshepptech/recall</a></p>
         </div>
         <figure class="shot">
           <img src="img/recall-ui.png" alt="recall web UI listing conventions, decisions, a requirement and an error, with one decision open showing its content, tags and trust score." width="1400" height="640" loading="lazy">
@@ -129,7 +129,7 @@
           <p class="case__label">What it does</p>
           <p>A free scan: paste a URL and get a plain-language report on five common holes, with what someone could do with each finding and what to fix first.</p>
           <ul class="tags"><li>TypeScript</li><li>Next.js</li></ul>
-          <p class="project__status">Repository publishing soon</p>
+          <p class="project__links"><a href="https://github.com/gshepptech/quietword">github.com/gshepptech/quietword</a></p>
         </div>
         <figure class="shot">
           <img src="img/quietword-report.png" alt="Quietword scan report: one finding worth fixing, three that look fine and one that could not be checked." width="880" height="924" loading="lazy">
@@ -140,12 +140,12 @@
       <div class="more">
         <h3 class="more__title">More projects</h3>
         <div class="work-grid">
-          <article><h4>The Tavern</h4><p>Fifteen Claude Code plugins for writing specs, building in parallel and reviewing UX, each with guardrails. The git guard lets a run commit locally but blocks pushes and other ways of publishing, even with permissions bypassed, and a separate agent checks the work.</p><ul class="tags"><li>Python</li><li>Claude Code plugins</li></ul><p class="project__status">Repository publishing soon</p></article>
-          <article><h4>redpen</h4><p>A linter that scans a project's source and its rendered page for the patterns that make UI, code and docs read as machine-made, and scores the result on two separate axes: slop and quality.</p><ul class="tags"><li>TypeScript</li><li>Playwright</li></ul><p class="project__status">Repository publishing soon</p></article>
-          <article><h4>gumroad-mcp</h4><p>An MCP server that gives agents read and write access to a Gumroad store and keeps irreversible commands switched off unless you turn them on.</p><ul class="tags"><li>Go</li><li>MCP</li></ul><p class="project__status">Repository publishing soon</p></article>
-          <article><h4>sluice</h4><p>A DORA metrics service that works out deploy frequency, lead time, change failure rate and time to restore from an append-only log of GitHub, GitLab and Slack events, so the numbers come from what happened instead of a spreadsheet.</p><ul class="tags"><li>Go</li><li>PostgreSQL</li><li>React</li></ul><p class="project__status">Repository publishing soon</p></article>
-          <article><h4>Annex</h4><p>A macOS app for running a team of Claude Code agents, where work only counts as done after it has been checked, reviewed and checked again.</p><ul class="tags"><li>TypeScript</li><li>Swift</li></ul><p class="project__status">Repository publishing soon</p></article>
-          <article><h4>Perspectiv</h4><p>A storytelling forum tied to a place and a date, where everyone who was there writes their side. A full-stack Go and React app with its security state, such as lockouts and rate limits, kept in PostgreSQL.</p><ul class="tags"><li>Go</li><li>React</li><li>PostgreSQL</li></ul><p class="project__status">Repository publishing soon</p></article>
+          <article><h4>The Tavern</h4><p>Fifteen Claude Code plugins for writing specs, building in parallel and reviewing UX, each with guardrails. The git guard lets a run commit locally but blocks pushes and other ways of publishing, even with permissions bypassed, and a separate agent checks the work.</p><ul class="tags"><li>Python</li><li>Claude Code plugins</li></ul><p class="project__links"><a href="https://github.com/gshepptech/the-tavern">github.com/gshepptech/the-tavern</a></p></article>
+          <article><h4>redpen</h4><p>A linter that scans a project's source and its rendered page for the patterns that make UI, code and docs read as machine-made, and scores the result on two separate axes: slop and quality.</p><ul class="tags"><li>TypeScript</li><li>Playwright</li></ul><p class="project__links"><a href="https://github.com/gshepptech/redpen">github.com/gshepptech/redpen</a></p></article>
+          <article><h4>gumroad-mcp</h4><p>An MCP server that gives agents read and write access to a Gumroad store and keeps irreversible commands switched off unless you turn them on.</p><ul class="tags"><li>Go</li><li>MCP</li></ul><p class="project__links"><a href="https://github.com/gshepptech/gumroad-mcp">github.com/gshepptech/gumroad-mcp</a></p></article>
+          <article><h4>sluice</h4><p>A DORA metrics service that works out deploy frequency, lead time, change failure rate and time to restore from an append-only log of GitHub, GitLab and Slack events, so the numbers come from what happened instead of a spreadsheet.</p><ul class="tags"><li>Go</li><li>PostgreSQL</li><li>React</li></ul><p class="project__links"><a href="https://github.com/gshepptech/sluice">github.com/gshepptech/sluice</a></p></article>
+          <article><h4>Annex</h4><p>A macOS app for running a team of Claude Code agents, where work only counts as done after it has been checked, reviewed and checked again.</p><ul class="tags"><li>TypeScript</li><li>Swift</li></ul><p class="project__links"><a href="https://github.com/gshepptech/annex">github.com/gshepptech/annex</a></p></article>
+          <article><h4>Perspectiv</h4><p>A storytelling forum tied to a place and a date, where everyone who was there writes their side. A full-stack Go and React app with its security state, such as lockouts and rate limits, kept in PostgreSQL.</p><ul class="tags"><li>Go</li><li>React</li><li>PostgreSQL</li></ul><p class="project__links"><a href="https://github.com/gshepptech/perspectiv">github.com/gshepptech/perspectiv</a></p></article>
         </div>
       </div>
   </div>
